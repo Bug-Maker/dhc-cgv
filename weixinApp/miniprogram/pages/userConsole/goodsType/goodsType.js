@@ -86,10 +86,13 @@ Page({
 
     // 请求服务器处理搜索信息
     wx.request({
-      url: 'http://172.21.20.150:8080/goodTypeSearch' + typename,
+      url: 'http://172.21.20.150:8080/goodTypeSearch',
       method: "GET",
       header: {
         'Content-Type': 'json',
+      },
+      data: {
+        "typename": typename
       },
       success: (({ data }) => {
 
