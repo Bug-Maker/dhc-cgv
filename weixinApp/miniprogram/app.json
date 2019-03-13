@@ -36,7 +36,8 @@
     "pages/index/chooseMovie/seat/buyGoods/buyGoods",
     "pages/mine/userLogin/userLogin",
     "pages/shop/goodspay/goodspay",
-    "pages/shop/starCard/starCard"
+    "pages/shop/starCard/starCard",
+    "pages/userConsole/goodsType/goodsType"
   ],
   "permission": {
     "scope.userLocation": {

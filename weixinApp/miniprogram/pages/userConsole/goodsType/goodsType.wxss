@@ -1,0 +1,6 @@
+/* pages/userConsole/goodsType/goodsType.wxss */
+@import "../../../colorui.wxss";
+
+.gmargin {
+  margin-right: 10rpx!important;
+}

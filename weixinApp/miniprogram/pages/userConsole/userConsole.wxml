@@ -106,6 +106,24 @@
       </view>
     </view>
     </navigator>
+
+
+
+  <navigator style="margin-top:20rpx;" url="{{mygoodstype}}" hover-class="none" open-type="navigate" class="wodelist-text">
+    <view class='flex-wrp-row item border' style='background: #fff;'>
+      <view class='item-left flex-wrp-row'>
+        <icon class='iconfont icon-jifen' >
+          <text class='foottext'>产品分类</text>
+        </icon>
+      </view>
+      <view class='item-left flex-wrp-row'>
+        <text class='medium-font-size'></text>
+      </view>
+      <view class='item-right flex-wrp-row'>
+        <icon class='iconfont icon-jiantouyou icon-right'></icon>
+      </view>
+    </view>
+    </navigator>    
   </view>
  
   </view>

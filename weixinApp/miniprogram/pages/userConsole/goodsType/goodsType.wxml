@@ -1,0 +1,103 @@
+<!--pages/userConsole/goodsType/goodsType.wxml-->
+<page>
+<view class='box'>
+<view class="cu-bar search bg-white">
+    <view class='search-form round'>
+      <text class="icon-search"></text>
+      <input type="text" placeholder="搜索产品分类" bindinput="getTypeInput" confirm-type="search"></input>
+    </view>
+    <view class='action gmargin'>
+      <button class='cu-btn bg-green shadow-blur round' bindtap='searchType'>搜索</button>
+      <button class='cu-btn bg-blue shadow-blur round' data-target="DialogAdd" bindtap='showModel'>新增</button>
+    </view>
+  </view>
+  </view>
+
+  <view class='box'>
+    <view class='cu-bar'>
+      <view class='action'>
+        <text class='text-left text-orange padding'>产品分类名</text>
+      </view>
+    </view>
+
+    <block wx:for="{{goodtypes}}" wx:for-index="goodtypeid" wx:for-item="goodtype">
+      <view class='cu-bar bg-white solid-bottom'>
+        <view class='action'>
+          <text class='text-left text-black padding'>{{goodtype.goodtypename}}</text>
+        </view>
+        <view class='action gmargin'>
+          <button class="cu-btn round lines-green" data-target="DialogUpdate" bindtap='showModel' data-gtypeindex="{{goodtypeid}}">更新</button>
+          <button class="cu-btn round lines-red" data-target="DialogDelete" bindtap='showModel' data-gtypeindex="{{goodtypeid}}">删除</button>
+        </view>
+      </view>    
+    </block>
+
+  </view>
+
+
+<!--     新增按钮对应的模态框      -->
+<view class="cu-modal {{modalName=='DialogAdd'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>新增产品类型</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view class='padding-sm'>
+      <input type="text" placeholder="请输入产品类型" bindinput="getAddTypeInput"></input>
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class='action'>
+        <button class='cu-btn line-green text-green' bindtap='hideModal'>取消</button>
+        <button class='cu-btn bg-green margin-left' bindtap='addType'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!--     更新按钮对应的模态框      -->
+<view class="cu-modal {{modalName=='DialogUpdate'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>更新产品类型</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view class='padding-sm'>
+      <input type="text" value="{{updateValue}}" bindinput="getUpdateTypeInput"></input>
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class='action'>
+        <button class='cu-btn line-green text-green' bindtap='hideModal'>取消</button>
+        <button class='cu-btn bg-green margin-left' bindtap='updateType'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--     删除按钮对应的模态框      -->
+<view class="cu-modal {{modalName=='DialogDelete'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>请确认是否删除该产品类型</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view class='padding-sm'>
+      {{updateValue}}
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class='action'>
+        <button class='cu-btn line-green text-green' bindtap='hideModal'>取消</button>
+        <button class='cu-btn bg-green margin-left' bindtap='deleteType'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+</page>

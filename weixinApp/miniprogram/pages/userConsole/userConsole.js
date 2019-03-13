@@ -10,7 +10,7 @@ Page({
     myLikeUrl: regurl,
     myOrderUrl: regurl,
     myPointsUrl: regurl,
-
+    mygoodstype: 'goodsType/goodsType',
     loginstatus: false,
     avatarUrl: 'cloud://cvg20190102-80d55e.6376-cvg20190102-80d55e/user-unlogin.png',
     userInfo: {},
